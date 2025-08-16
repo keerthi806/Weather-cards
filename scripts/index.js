@@ -8,7 +8,18 @@ let cityId = JSON.parse(localStorage.getItem('cityId')) || 1;
 
 displayRemoveAllButton(addedCities);
 
-const apiKey = 'b923ad656c0ddc07d8ee6b9ea3044d94';
+/*
+API_KEY HANDLING: 
+* In production, API keys should never be hardcoded in client-side code.
+
+* Normally, this value would be loaded securely from a server or environment variable.
+
+* For this demo project, the key is stored in a local .env file (ignored by Git).
+
+* Here we use a placeholder to show where the key would be injected at runtime.
+*/
+
+const apiKey = 'API_KEY';
 let timeoutId;
 
 async function getWeatherData() {
@@ -50,7 +61,7 @@ function generateCurrentDataHtml(weatherData) {
           ${(temp - 273.15).toFixed(2)}°C
         </span>
           <button class="temp-change js-change-button" title="Change unit">
-            <img src="change.png" alt="change temperature to Fahrenhite" class="change-img">
+            <img src="./images/change.png" alt="change temperature to Fahrenhite" class="change-img">
           </button>
       </p>
       <div class="lat-long-container">
