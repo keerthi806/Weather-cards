@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inria+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+
+  <div class="input-container">
+    <input type="text" class="city-input js-city-input" placeholder="Enter city name">
+    <button class="fetch-button js-get-button">Get weather</button>
+  </div>
+
+  <div class="error-content js-error"></div>
+
+  <div class="current-search js-current-search">
+    <div class="current-data js-current-data">
+      <h2 class="city-name js-city-name"></h2>
+      <p class="temp">
+        <span class="js-temp"> </span>
+        <button class="temp-change js-change-button" title="Change unit">
+          <img src="change.png" alt="change temperature to Fahrenhite" class="change-img">
+        </button>
+      </p>
+      <div class="lat-long-container">
+        <p>Latitude: <span></span></p>
+        <p>Longitude: <span></span></p>
+      </div>
+      <p class="sea-level">Sea level: <span></span></p>
+      <p class="humidity">Humidity: <span></span></p>
+      <p class="clouds js-description"></p>
+      <p class="emoji js-emoji"></p>
+    </div>
+    <button class="add-city-button js-add-city">Add city</button>
+  </div>
+
+  <div class="cities-container js-cities-container"></div>
+
+  <div class="remove-all-cards">
+    <button class="remove-all-button js-remove-all">REMOVE ALL</button>
+  </div>
+
+  <script src="index.js" type="module"></script>
+</body>
+
+</html>

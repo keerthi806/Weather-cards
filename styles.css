@@ -1,0 +1,246 @@
+body{
+  font-family: 'Inria Sans', sans-serif;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+p{
+  font-size: 1.2em;
+  margin: 15px 2px;
+}
+
+span{
+  font-family: monospace;
+  font-size: 1.3em;
+}
+
+button{
+  cursor: pointer;
+}
+
+.input-container{
+  display: flex;
+  gap: 25px;
+  margin-bottom: 30px;
+  align-items: center;
+  justify-content: center;
+}
+
+.city-input{
+  font-size: 1.2em;
+  padding: 8px;
+  border-radius: 5px;
+  border: 2px solid white;
+  background-color: black;
+  color: white;
+}
+
+.fetch-button{
+  border: none;
+  border-radius: 5px;
+  background-color: hsl(217, 67%, 38%);
+  font-size: 1.1em;
+  padding: 8px;
+  color: white;
+  transition: background-color 0.3s ease;
+}
+
+.fetch-button:hover{
+  background-color: hsl(217, 67%, 52%);
+}
+
+.current-search{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 45px;
+  opacity: 0;
+  transition: opacity 0.3s ease-in;
+}
+
+.current-data{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  font-size: 1.3em;
+  padding: 15px 50px;
+  border-radius: 10px;
+  font-weight: 600;
+  /* background: linear-gradient(to bottom, red, blue); */
+}
+.add-city-button{
+  border: none;
+  background-color: hsl(217, 67%, 38%);
+  padding: 8px;
+  font-size: 1.2em;
+  border-radius: 5px;
+  color: white;
+  transition: background-color 0.3s ease;
+}
+
+.add-city-button:hover{
+  background-color: hsl(217, 67%, 52%);
+}
+
+/* .cities-container{
+  display: flex;
+  gap: 100px;
+  align-items: center;
+  justify-content: center;
+} */
+
+.cities-container{
+  display: grid;
+  /* grid-template-columns: 1fr 1fr 1fr; */
+  column-gap: 20px;
+  row-gap: 40px;
+  place-items: center;
+}
+
+@media(max-width: 860px){
+  .cities-container{
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media(max-width: 861px) and (max-width: 999px){
+  .cities-container{
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+@media(min-width: 1000px){
+  .cities-container{
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
+
+.city-data{
+  background: linear-gradient(to bottom, hsl(77, 92%, 67%), hsl(216, 92%, 71%));
+  border-radius: 10px;
+  padding: 10px 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 250px;
+}
+
+.city-name{
+  font-size: 1.8em;
+}
+
+.temp{
+  font-family: monospace;
+  font-weight: bold;
+  font-size: 2.5em;
+  -webkit-text-stroke: 0.5px hsl(0, 0%, 100%);
+  text-shadow: 2px 2px 6px hsla(0, 0%, 0%, 0.5);
+  display: flex;
+  gap: 30px;
+  place-content: center;
+}
+
+.emoji{
+  font-size: 3em;
+}
+
+.error-content{
+  padding: 10px 15px;
+  margin-bottom: 5px;
+  margin-top: 10px;
+  font-size: 2em;
+  opacity: 0;
+  font-weight: bold;
+  color: hsla(0, 92%, 54%, 0.899);
+  transition: opacity 0.3s ease-in-out;
+}
+
+.recorded-time{
+  text-align: center;
+}
+
+.time{
+  font-family: monospace;
+  font-size: 1.5em;
+  font-weight: 700;
+}
+
+.remove-card{
+  margin-top: 25px;
+  border: none;
+  background: transparent;
+  color: hsl(0, 91%, 53%);
+  font-size: 1.4em;
+  font-weight: 700;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.remove-card:hover{
+  color: hsl(0, 91%, 43%);
+}
+
+.remove-all-cards{
+  display: flex;
+  place-content: center;
+  margin-top: 45px;
+}
+
+.remove-all-button{
+  border: none;
+  padding: 10px 15px;
+  font-family: 1.2em;
+  border-radius: 5px;
+  font-weight: bolder;
+  background: hsl(0, 91%, 56%);
+  color: hsl(0, 0%, 100%);
+  display: none;
+  transition: font-size 0.3s ease;
+}
+
+.toggle-remove-all{
+  display: block;
+}
+
+.remove-all-button:hover{
+  background-color: hsl(0, 91%, 46%);
+  font-size: 1.005rem;
+}
+
+.temp-change{
+  background: transparent;
+  border: none;
+  width: 60px;
+  height: 60px;
+  padding: 10px 5px;
+}
+.temp-change button{
+  background: transparent;
+}
+.change-img{
+  width: 40px;
+}
+.change-img:hover{
+  width: 42px;
+}
+
+.card-change-img{
+  width: 30px;
+}
+.card-change-img:hover{
+  width: 32px;
+}
+.cards-temp{
+  gap: 10px;
+}
+
+.clouds{
+  font-size: 1.4em;
+  font-weight: 600;
+}
+
